@@ -1,9 +1,21 @@
 import React from 'react';
 import EventsList from '../components/events/events-list';
 import { getFeaturedEvents } from '../utils/firebase';
+import Head from 'next/head';
 
 export default function HomePage({ featuredEvents }) {
-  return <EventsList events={featuredEvents} />;
+  return (
+    <div>
+      <Head>
+        <title>Next.js Events </title>
+        <meta
+          name="description"
+          content="Explore featured events on our Next.js Events Website. Discover exciting events, and stay updated with the latest happenings around you."
+        />
+      </Head>
+      <EventsList events={featuredEvents} />
+    </div>
+  );
 }
 
 export async function getStaticProps() {

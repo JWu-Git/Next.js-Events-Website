@@ -1,6 +1,6 @@
 import React from 'react';
 import { getEventById, getAllEvents } from '../../dummy-data';
-
+import Comments from '../../components/input/comments';
 import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventContent from '../../components/event-detail/event-content';
@@ -25,6 +25,7 @@ export default function EventDetailPage({ event }) {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </>
   );
 }

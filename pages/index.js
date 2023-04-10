@@ -2,7 +2,7 @@ import React from 'react';
 import EventsList from '../components/events/events-list';
 import { getFeaturedEvents } from '../utils/firebase';
 import Head from 'next/head';
-
+import NewsletterRegistration from '../components/input/newsletter-registration';
 export default function HomePage({ featuredEvents }) {
   return (
     <div>
@@ -13,6 +13,7 @@ export default function HomePage({ featuredEvents }) {
           content="Explore featured events on our Next.js Events Website. Discover exciting events, and stay updated with the latest happenings around you."
         />
       </Head>
+      <NewsletterRegistration />
       <EventsList events={featuredEvents} />
     </div>
   );

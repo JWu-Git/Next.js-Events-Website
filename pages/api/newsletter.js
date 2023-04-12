@@ -12,7 +12,7 @@ async function handler(req, res) {
       await db.collection('emails').insertOne({ email });
       return res.status(201).json({ message: 'Signed up' });
     } catch (e) {
-      console.log(e);
+      return res.status(500).json({ message: 'Inserting data failed' });
     }
   }
 }

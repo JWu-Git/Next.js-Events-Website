@@ -41,7 +41,7 @@ async function handler(req, res) {
         .toArray();
       return res.status(200).json(comments);
     } catch (e) {
-      console.log(e);
+      return res.status(500).json({ message: 'DB error' });
     }
   }
 }

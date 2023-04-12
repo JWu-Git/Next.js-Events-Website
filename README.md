@@ -2,19 +2,15 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It is an events website, which displays various events and provides functionalities like filtering events based on month and year.
+The event website is a comprehensive platform that showcases a wide range of events, highlights featured events, and offers user-friendly functionalities. 
 
-## Getting Started
+Users can effortlessly filter events based on month and year to find events that match their interests and schedule. Additionally, the website fosters community interaction by enabling users to leave comments and share their thoughts. 
 
-First, run the development server:
+To keep users informed about the latest events and updates, the website also features a newsletter signup option.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## View Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To view the website, please visit this [link](https://next-js-events-website.vercel.app/).
 
 ## Pages
 
@@ -22,21 +18,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - events/index.js: This page shows a list of all events and allows users to search for events by month and year.
 - events/[eventid].js: This page displays detailed information about a single event based on the eventid URL parameter.
 - events/[...slug].js: This page shows a list of events based on the provided month and year filters from the URL slug.
-
-## Components
-
-- EventsList: This component is responsible for displaying a list of events.
-- ResultsTitle: This component shows a title with the month and year of the filtered events.
-- Button: This reusable UI component is used to display various buttons throughout the project.
-- ErrorAlert: This UI component is used to display error messages.
-- EventSummary: This component displays a summary of a single event.
-- EventLogistics: This component displays the logistics information of a single event, such as date, location, and image.
-- EventContent: This component displays the description of a single event.
-- EventsSearch: This component allows users to search for events by month and year.
-
-## Dummy Data
-
-The project uses dummy-data as a data source for the events. In a real-world scenario, you can replace this with data from an API or a database.
 
 ## Learn More
 

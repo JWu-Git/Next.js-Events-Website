@@ -12,7 +12,7 @@ To keep users informed about the latest events and updates, the website also fea
 
 This website is currently deployed to and hosted on Vercel.
 
-To view the website, please visit this [link](https://next-js-events-website.vercel.app/).
+To view the website, please visit https://next-js-events-website.vercel.app/
 
 ## Pages
 

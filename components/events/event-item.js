@@ -4,6 +4,7 @@ import classes from './event-item.module.css';
 import Button from '../ui/Button';
 import ArrowRightIcon from '../icons/arrow-right-icon';
 import AddressIcon from '../icons/address-icon';
+import DateIcon from '../icons/date-icon';
 import Image from 'next/image';
 export default function EventItem({ event }) {
   const { title, image, date, location, id } = event;
@@ -21,7 +22,10 @@ export default function EventItem({ event }) {
         <div className={classes.summary}>
           <h2>{title}</h2>
           <div>
-            <time className={classes.date}>{formattedDate}</time>
+            <time className={classes.date}>
+              <DateIcon />
+              {formattedDate}
+            </time>
           </div>
           <div className={classes.address}>
             <AddressIcon />

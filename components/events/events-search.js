@@ -15,16 +15,16 @@ export default function EventsSearch() {
     router.push(`/events/${year}/${month}`);
   };
   return (
-    <form class={classes.form} onSubmit={submitHandler}>
-      <div class={classes.controls}>
-        <div class={classes.control}>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <div className={classes.controls}>
+        <div className={classes.control}>
           <label htmlFor="year">Year</label>
           <select id="year" ref={yearRef}>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
           </select>
         </div>
-        <div class={classes.control}>
+        <div className={classes.control}>
           <label htmlFor="month">Month</label>
           <select id="month" ref={monthRef}>
             <option value="1">January</option>

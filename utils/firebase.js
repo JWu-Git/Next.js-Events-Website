@@ -1,9 +1,9 @@
 import axios from 'axios';
+import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config({ path: '.env.local' });
 
 export async function getAllEvents() {
-  const resp = await axios.get(
-    'https://next-events-f6315-default-rtdb.firebaseio.com/events.json'
-  );
+  const resp = await axios.get(process.env.FIREBASE);
   const data = resp.data;
   const events = [];
   for (let key in data) {

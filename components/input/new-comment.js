@@ -1,14 +1,15 @@
 import { useRef, useState } from 'react';
 import classes from './new-comment.module.css';
+import axios from 'axios';
 
 function NewComment(props) {
-  const [isInvalid, setIsInvalid] = useState(false);
+  const [isInvalid, setIsInvalid] = useState();
 
   const emailInputRef = useRef();
   const nameInputRef = useRef();
   const commentInputRef = useRef();
 
-  function sendCommentHandler(event) {
+  async function sendCommentHandler(event) {
     event.preventDefault();
 
     const enteredEmail = emailInputRef.current.value;
@@ -24,34 +25,43 @@ function NewComment(props) {
       !enteredComment ||
       enteredComment.trim() === ''
     ) {
-      setIsInvalid(true);
+      setIsInvalid(1);
       return;
     }
 
-    props.onAddComment({
-      email: enteredEmail,
-      name: enteredName,
-      text: enteredComment,
-    });
+    try {
+      await axios.post('/api/comments/' + props.eventId, {
+        email: enteredEmail,
+        name: enteredName,
+        text: enteredComment,
+      });
+      setIsInvalid(2);
+    } catch (e) {
+      setIsInvalid(3);
+    }
   }
 
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={sendCommentHandler}>
       <div className={classes.row}>
         <div className={classes.control}>
-          <label htmlFor='email'>Your email</label>
-          <input type='email' id='email' ref={emailInputRef} />
+          <label htmlFor="email">Your email</label>
+          <input type="email" id="email" ref={emailInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='name'>Your name</label>
-          <input type='text' id='name' ref={nameInputRef} />
+          <label htmlFor="name">Your name</label>
+          <input type="text" id="name" ref={nameInputRef} />
         </div>
       </div>
       <div className={classes.control}>
-        <label htmlFor='comment'>Your comment</label>
-        <textarea id='comment' rows='5' ref={commentInputRef}></textarea>
+        <label htmlFor="comment">Your comment</label>
+        <textarea id="comment" rows="5" ref={commentInputRef}></textarea>
       </div>
-      {isInvalid && <p>Please enter a valid email address and comment!</p>}
+      {isInvalid === 1 && (
+        <p>Please enter a valid email address, name, and comment!</p>
+      )}
+      {isInvalid === 2 && <p>Successfully added comment! Refresh to see it.</p>}
+      {isInvalid === 3 && <p>Error adding comment.</p>}
       <button>Submit</button>
     </form>
   );

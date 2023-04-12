@@ -1,6 +1,6 @@
 import React from 'react';
 import EventsList from '../components/events/events-list';
-import { getFeaturedEvents } from '../utils/firebase';
+import { getFeaturedEvents } from '../utils/events';
 import Head from 'next/head';
 import NewsletterRegistration from '../components/input/newsletter-registration';
 export default function HomePage({ featuredEvents }) {

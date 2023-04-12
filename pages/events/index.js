@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import EventList from '../../components/events/events-list';
 import EventsSearch from '../../components/events/events-search';
-import { getAllEvents } from '../../utils/firebase';
+import { getAllEvents } from '../../utils/events';
 
 export default function AllEventsPage({ events }) {
   return (

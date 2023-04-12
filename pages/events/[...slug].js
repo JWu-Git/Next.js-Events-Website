@@ -1,5 +1,5 @@
 import React from 'react';
-import { getFilteredEvents } from '../../utils/firebase';
+import { getFilteredEvents } from '../../utils/events';
 import EventsList from '../../components/events/events-list';
 import ResultsTitle from '../../components/events/results-title';
 import Button from '../../components/ui/Button';

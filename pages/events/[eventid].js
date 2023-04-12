@@ -1,5 +1,5 @@
 import React from 'react';
-import { getEventById, getAllEvents } from '../../dummy-data';
+import { getEventById, getAllEvents } from '../../utils/events';
 import Comments from '../../components/input/comments';
 import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
